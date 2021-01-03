@@ -1,4 +1,7 @@
 import Menu from "./menu";
+import simpleParallax from 'simple-parallax-js';
 
-var rellax = new Rellax(".rellax");
+const images = document.querySelectorAll(".parallax")
+
 new Menu;
+new simpleParallax(images);
