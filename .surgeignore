@@ -1,0 +1,6 @@
+.cache
+src
+.gitignore
+.surgeignore
+package.json
+readme.md
