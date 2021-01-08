@@ -11,7 +11,7 @@
     "prod": "npm-run-all --serial clean sass-prod js-prod",
     "clean": "rm -r ./build/",
     "sass-prod": "sass ./src/scss/style.scss build/css/style.css --no-source-map --style=compressed",
-    "js-prod": "parcel build ./src/js/index.js --out-dir ./build/js --out-file bundle.js --no-source-map",
+    "js-prod": "parcel build ./src/js/index.js --out-dir ./build/js --out-file bundle.js --no-source-maps",
     "deploy": "surge . --domain ogl-londerzeel.surge.sh"
   },
   "keywords": [],

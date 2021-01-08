@@ -9,7 +9,7 @@ body{
     background-color: #F1F1F1;
 
     .special{
-        color: $accentColor;
+        color: $accentColorOranje;
     }
 
     .social{
@@ -27,11 +27,10 @@ body{
             justify-content: center;
             align-items: center;
             background-color: $mainColor;
-            border: 1px solid $accentColor;
-            border-radius: 50%;
+            border: 1px solid $accentColorOranje;
 
             &:hover{
-                background-color: $accentColor;
+                background-color: $accentColorOranje;
                 border: 1px solid $mainColor;
             }
         }
@@ -40,6 +39,9 @@ body{
     .container{
         max-width: 1400px;
         margin: 0 auto;
+    }
+    .col2{
+        @include mixins.make-col(2,10px);
     }
 
     header{
@@ -60,7 +62,7 @@ body{
                 font-size: 6rem;
                 line-height: 1.5em;
                 margin-bottom:20px;
-                background-color: rgba($accentColor,.5);
+                background-color: rgba($accentColorOranje,.5);
                 border-radius: 20px;
                 padding: 2px 5px;
             }
@@ -69,7 +71,7 @@ body{
 
     a {
         display: block;
-        color:$accentColor;
+        color:$accentColorOranje;
         transition: all 500ms;
 
         &:hover {
@@ -106,7 +108,7 @@ body{
 
         .logo {
             display: block;
-            @include mixins.font(1.8rem, 40px,$accentColor);
+            @include mixins.font(1.8rem, 40px,$accentColorOranje);
             margin:0;
         }
 
@@ -118,9 +120,9 @@ body{
                     padding:4px 1vw;
                     line-height: 40px;
                     margin:2px;
-                    border-radius: 20px;
                     &:hover{
-                        background-color: $accentColor;
+                        background-color: $accentColorOranje;
+                        box-shadow: 5px 5px 10px $accentColorDarkBlue;
                     }
                 }
             }
@@ -129,45 +131,45 @@ body{
 
     main{
         section{
-            padding-top: 20px;
             max-width: 1400px;
             width: 90%;
             margin: 0 auto;
+            
+            article{
+                background-color: white;
+                padding:15px;
+            }
             h2{
-                @include mixins.font(3rem,1.5em, $accentColor);
+                @include mixins.font(3rem,1.5em, $accentColorOranje);
+                text-align: center;
 
             }
             h3{
-                @include mixins.font(2rem,1.5em, $accentColor);
-            }
-            .parallax{
-                /*height: auto;
-                background-image: url("../../images/OGL_Final.svg");
-                background-size: cover;
-                background-position: center;*/
-                 
-                
-                min-height: 200px; 
-
-                position: relative;
-                opacity: .7;
-                background-attachment: fixed;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: contain;
-
-                &.bgimg1{
-                    background-image: url('https://static.wixstatic.com/media/d5d042_17088449f2af48d28f2947c7cec5b64b.jpg/v1/fill/w_772,h_140,al_c,q_80,usm_0.66_1.00_0.01/d5d042_17088449f2af48d28f2947c7cec5b64b.webp');
-                }
-                &.bgimg2{
-                    background-image: url("https://static.wixstatic.com/media/d5d042_0499dad88bcc4c44a9456836b40077aa.jpg/v1/fill/w_772,h_140,al_c,q_80,usm_0.66_1.00_0.01/d5d042_0499dad88bcc4c44a9456836b40077aa.webp");
-                }
-                /*img{
-                    width: 100%;
-                }*/
+                @include mixins.font(2rem,1.5em, $accentColorOranje);
             }
             img{
                 width: 10vw;
+            }
+        }
+
+        .parallax{
+            max-width: 1400px;
+            width: 90%;
+            margin: 0 auto;
+            min-height: 200px; 
+
+            position: relative;
+            opacity: .7;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            &.bgimg1{
+                background-image: url('https://static.wixstatic.com/media/d5d042_17088449f2af48d28f2947c7cec5b64b.jpg/v1/fill/w_772,h_140,al_c,q_80,usm_0.66_1.00_0.01/d5d042_17088449f2af48d28f2947c7cec5b64b.webp');
+            }
+            &.bgimg2{
+                background-image: url("https://static.wixstatic.com/media/d5d042_0499dad88bcc4c44a9456836b40077aa.jpg/v1/fill/w_772,h_140,al_c,q_80,usm_0.66_1.00_0.01/d5d042_0499dad88bcc4c44a9456836b40077aa.webp");
             }
         }
     }
@@ -207,6 +209,16 @@ body{
             }
             .menu{
                 display: block;
+            }
+        }
+        main{
+            section{
+                &.col{
+                    flex-direction: column;
+                    *:nth-child(n){
+                        width: 100%;
+                    }
+                }
             }
         }
     }
